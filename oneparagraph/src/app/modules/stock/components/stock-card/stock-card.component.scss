@@ -1,0 +1,11 @@
+@import "vars";
+
+.profit {
+  color: $accept;
+}
+.no-profit {
+  color: $cancel;
+}
+section {
+  border: solid 1px $surfaceDim;
+}

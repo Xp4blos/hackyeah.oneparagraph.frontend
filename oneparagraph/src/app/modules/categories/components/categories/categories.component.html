@@ -1,6 +1,6 @@
-<section class="text-white categories mt-40 p-4">
-  <h2 class="dm-serif-regular text-xl">28.09.2024</h2>
-  <p class="dm-mono-regular text-slate-100">
+<section class="text-white categories my-40 p-4 max-w-2xl mx-auto">
+  <h2 class="dm-serif-regular text-xl py-2">{{ date | date : "d/M/yyyy" }}</h2>
+  <p class="dm-mono-regular text-slate-400">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis nisl
     molestie lorem dignissim interdum. Morbi vel imperdiet lorem. Sed ligula
     felis, ornare in vehicula porta, pulvinar non nunc. Integer lacus risus,
@@ -9,4 +9,19 @@
     consectetur leo a commodo iaculis. Fusce vulputate sapien at nisi porttitor,
     at facilisis sem ultrices.
   </p>
+  <div class="flex gap-2 my-5">
+    <app-tag [tag]="'Microsoft'"></app-tag>
+    <app-tag [tag]="'Financial Mistake'"></app-tag>
+    <app-tag [tag]="'Meta'"></app-tag>
+  </div>
+  <div class="sources">
+    <h3 class="text-xl">Sources</h3>
+    <ul class="list-disc p-5">
+      @for(source of sources; track source){
+      <li class="text-slate-400 dm-mono-regular">
+        <a href="{{ source }}">{{ source }}</a>
+      </li>
+      }
+    </ul>
+  </div>
 </section>

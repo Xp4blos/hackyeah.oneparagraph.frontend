@@ -1,12 +1,12 @@
-<header class="p-4 fixed top-0 left-0 right-0">
+<header class="p-4 fixed top-0 left-0 right-0 z-40">
   <h1 class="text-center text-white text-4xl dm-serif-regular">
     One Paragraph.
   </h1>
   <div
     class="menu mt-10 text-white dm-mono-regular mx-auto flex justify-around"
   >
-    <a href="">Categories</a>
-    <a href="">Stock</a>
-    <a href="">Trending</a>
+    <a [routerLink]="'/categories'" [routerLinkActive]="'active'">Categories</a>
+    <a [routerLink]="'/stock'" [routerLinkActive]="'active'">Stock</a>
+    <a [routerLink]="'/trending'" [routerLinkActive]="'active'">Trending</a>
   </div>
 </header>

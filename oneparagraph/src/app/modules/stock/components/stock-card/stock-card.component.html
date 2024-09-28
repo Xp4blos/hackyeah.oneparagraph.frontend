@@ -1,0 +1,29 @@
+<section
+  class="text-white categories p-4 max-w-2xl mx-auto rounded-xl my-5 drop-shadow-lg"
+>
+  <h2
+    class="dm-serif-regular text-xl py-2"
+    [ngClass]="stockProfit ? 'profit' : 'no-profit'"
+  >
+    {{ name }} <span class="ml-5"> {{ percent }}</span>
+  </h2>
+  <p class="dm-mono-regular text-slate-400">
+    {{ desc }}
+  </p>
+  <div class="flex gap-2 my-5">
+    @for(tag of tags; track tag){
+
+    <app-tag tag="{{ tag }}"></app-tag>
+    }
+  </div>
+  <div class="sources">
+    <h3 class="text-xl">Sources</h3>
+    <ul class="list-disc p-5">
+      @for(source of sources; track source){
+      <li class="text-slate-400 dm-mono-regular">
+        <a href="{{ source }}">{{ source }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+</section>

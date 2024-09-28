@@ -1,0 +1,9 @@
+<section class="text-white mt-40 p-4 dm-mono-regular max-w-2xl mx-auto">
+  @for(tag of tags;track tag){
+  <p class="tag flex justify-between items-center" (click)="tagState(tag)">
+    {{ tag.name }} @if(tag.state){
+    <img class="h-10 mr-20" src="icons/ok.png" alt="" />
+    }
+  </p>
+  }
+</section>
