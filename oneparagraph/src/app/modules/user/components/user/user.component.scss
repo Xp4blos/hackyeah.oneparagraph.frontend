@@ -1,0 +1,11 @@
+@import "vars";
+
+.valid {
+  color: $accept;
+}
+.invalid {
+  color: $cancel;
+}
+section {
+  line-height: 3rem;
+}
