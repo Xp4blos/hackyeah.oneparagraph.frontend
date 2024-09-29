@@ -6,7 +6,7 @@ import { UserService } from './modules/core/services/user.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'oneparagraph';
   constructor(private userService: UserService) {}
   onActivate(event: any) {
@@ -16,10 +16,5 @@ export class AppComponent implements OnInit {
       this.userService.userState = true;
     }
     console.log('navigation log: ', this.userService.userState);
-    document.exitFullscreen();
-  }
-
-  ngOnInit(): void {
-    document.exitFullscreen();
   }
 }
