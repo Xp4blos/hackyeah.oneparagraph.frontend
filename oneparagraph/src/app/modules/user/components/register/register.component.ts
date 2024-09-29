@@ -31,12 +31,12 @@ export class RegisterComponent {
       )
       .subscribe({
         next: (response) => {
-          this.userService.userState = false;
           console.log(response);
-          this.router.navigate(['/login']);
+
+          this.userService.userState = false;
+          this.router.navigate(['/user']);
         },
         error: (err) => {
-          console.log(err);
           this.errorMessage =
             'One or more validation errors. Password must contain 1 capital letter, 1 special character and min 8 characters';
         },

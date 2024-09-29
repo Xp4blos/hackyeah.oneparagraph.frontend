@@ -48,7 +48,6 @@ export class UserComponent implements OnInit {
       });
   }
   logout() {
-    console.log('logout');
     this.userService.userState = false;
     this.authService.logout();
   }

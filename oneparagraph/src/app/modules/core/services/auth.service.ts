@@ -57,7 +57,6 @@ export class AuthService {
   ) {
     this._token = token;
     localStorage.setItem('token', token);
-    console.log(token, refreshToken, expirationDate, 'TOKEN GET: ' + token);
   }
   logout() {
     this.userService.logoutUser();
