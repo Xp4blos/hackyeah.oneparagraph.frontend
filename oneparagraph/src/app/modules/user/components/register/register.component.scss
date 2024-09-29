@@ -1,0 +1,8 @@
+@import "vars";
+
+.valid {
+  color: $accept;
+}
+.invalid {
+  color: $cancel;
+}

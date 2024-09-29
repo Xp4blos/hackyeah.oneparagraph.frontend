@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../core/services/http.service';
 import { AuthService } from '../../../core/services/auth.service';
+import { IndustryParagraph } from '../../../core/models/paragraph.model';
+import { UserService } from '../../../core/services/user.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,19 +10,21 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrl: './categories.component.scss',
 })
 export class CategoriesComponent implements OnInit {
-  date: Date = new Date();
-  constructor(private http: HttpService, private auth: AuthService) {}
-  sources: Array<string> = [
-    'https://witam.com',
-    'https://bober.gov.pl',
-    'https://poliforge.com',
-  ];
+  constructor(
+    private http: HttpService,
+    private auth: AuthService,
+    public userService: UserService
+  ) {}
+  industryParagraphs!: IndustryParagraph[];
+  loaded: boolean = false;
   ngOnInit(): void {
     console.log('get token: ' + this.auth.token);
 
     this.http.getIndustryParagraphs().subscribe({
-      next: (val) => {
-        console.log(val);
+      next: (response) => {
+        this.industryParagraphs = response;
+        console.log(this.industryParagraphs);
+        this.loaded = true;
       },
     });
   }

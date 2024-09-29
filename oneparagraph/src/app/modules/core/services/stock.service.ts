@@ -11,16 +11,16 @@ export class StockService {
     new Stock(
       'Microsoft',
       '+3,5%',
-      'małomiękki korporacja',
-      ['Microsoft', 'Jasny Chuj'],
-      ['https://witam.com', 'https://bober.gov.pl', 'https://poliforge.com']
+      'Microsoft growing potencial',
+      ['Microsoft', 'Investment', 'Profit'],
+      ['https://hello.com', 'https://super-news.gov.pl']
     ),
     new Stock(
-      'Meta',
+      'Meta in trouble',
       '-1,3%',
       'Test',
-      ['Meta', 'Mark'],
-      ['https://witam.com', 'https://bober.gov.pl', 'https://poliforge.com']
+      ['Meta', 'Investment'],
+      ['https://witam.com', 'https://example.gov.pl', 'https://polyforge.com']
     ),
   ];
 

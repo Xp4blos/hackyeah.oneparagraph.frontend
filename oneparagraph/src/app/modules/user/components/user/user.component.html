@@ -1,11 +1,9 @@
 @if(userService.userState){
 
 <section class="dm-mono-regular my-40 text-white max-w-2xl mx-auto p-5">
-  <p>Name: Peter</p>
-  <p>Email: peter.smith&commat;gmail.com</p>
   <p class="text-center">Service valid until:</p>
   <p class="text-center valid">13.10.2024</p>
-  <button (click)="logout()">Logout</button>
+  <button (click)="logout()" class="invalid">Logout</button>
 </section>
 } @else{
 <section class="dm-mono-regular my-40 text-white max-w-2xl mx-auto p-5">
@@ -60,5 +58,6 @@
       <p class="invalid text-center">{{ errorMessage }}</p>
     </div>
   </form>
+  <a [routerLink]="'/register'" class="register">Register now.</a>
 </section>
 }

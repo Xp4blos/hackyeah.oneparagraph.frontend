@@ -17,6 +17,7 @@ export class UserComponent implements OnInit {
     private router: Router
   ) {}
   errorMessage!: string;
+  email!: string;
   loginForm = new FormGroup({
     email: new FormControl('', { nonNullable: true }),
     password: new FormControl('', { nonNullable: true }),
@@ -30,12 +31,13 @@ export class UserComponent implements OnInit {
       .subscribe({
         next: (val) => {
           this.errorMessage = '';
-          console.log(val);
+
           this.authService.handleAuthentication(
             val.accessToken,
             val.refreshToken,
             val.expiresIn
           );
+
           this.userService.loginUser();
 
           this.router.navigate(['/categories']);
@@ -47,7 +49,7 @@ export class UserComponent implements OnInit {
   }
   logout() {
     console.log('logout');
-
+    this.userService.userState = false;
     this.authService.logout();
   }
   ngOnInit(): void {}
